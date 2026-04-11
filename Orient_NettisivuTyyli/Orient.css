@@ -1,0 +1,164 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* White background */
+    color: #333333;
+}
+
+header {
+    background-color: #cc0000; /* Red background */
+    color: #ffffff; /* White text */
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 20px; /* Lisää tilaa linkkien väliin */
+    text-decoration: none; /* Poista linkin alaviiva */
+    color: #ffffff; /* Valkoinen teksti */
+    font-weight: bold; /* Lihavoitu teksti */
+    font-size: 1.1em; /* Suurenna fonttikokoa hieman */
+    transition: color 0.3s, transform 0.3s; /* Sujuva väri- ja zoom-efekti */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.616); /* Tekstivarjostus */
+}
+
+nav a:hover {
+    color: #ffcc00; /* Keltainen teksti hover-tilassa */
+    transform: translateY(-2px); /* Pieni ylöspäin liikkuminen hover-tilassa */
+}
+
+.hero {
+    background-image: url('../Orient_NettisivuKuvat/PizzaTaustakuva.jpg'); /* Lisää kuva taustalle */
+    background-size: cover; /* Kuvan koko täyttää elementin */
+    background-position: center; /* Kuvan sijainti keskiössä */
+    color: #cc0000; /* Punainen teksti */
+    padding: 80px 20px; /* Pienempi padding */
+    text-align: center;
+    background-blend-mode: overlay; /* Sekoita taustakuva ja taustaväri */
+    background-color: rgba(255, 255, 255, 0.5); /* Valkoinen taustaväri läpinäkyvyyden kanssa */
+    box-shadow: 0 0 12px rgb(0, 0, 0); /* Pienempi varjo */
+}
+
+.hero h1 {
+    font-size: 3.5em; /* Suurenna fonttikokoa */
+    font-weight: bold; /* Lihavoitu teksti */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.76); /* Tekstivarjostus */
+}
+
+.hero p {
+    font-size: 2.2em; /* Suurenna fonttikokoa */
+    font-style: italic; /* Kursivoitu teksti */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.527); /* Tekstivarjostus */
+}
+
+.section {
+    padding: 30px 20px; /* Pienempi padding */
+    text-align: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    background-color: #ffffff; /* White background */
+    border: 2px solid #cc0000; /* Red border */
+    margin: 10px; /* Pienempi marginaali */
+    padding: 15px; /* Pienempi padding */
+    border-radius: 8px; /* Pienempi kulmien pyöristys */
+    box-shadow: 0 0 8px rgb(0, 0, 0); /* Pienempi varjo */
+    width: 250px; /* Pienempi leveys */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    text-align: left; /* Vasemmalle tasaus */
+}
+
+.menu-item:hover {
+    transform: scale(1.03); /* Pienempi zoom-efekti */
+    box-shadow: 0 0 12px rgb(0, 0, 0); /* Pienempi varjo hover-tilassa */
+}
+
+.menu-item h3 {
+    font-size: 1.5em; /* Pienempi fonttikoko */
+    color: #cc0000; /* Punainen teksti */
+    margin-bottom: 10px; /* Väli otsikon ja tekstin väliin */
+}
+
+.menu-item ul {
+    list-style-type: disc; /* Disc list styling */
+    padding-left: 20px; /* Vasemmanpuoleinen täyttö luettelolle */
+    margin: 0; /* Poista marginaali */
+}
+
+.menu-item li {
+    margin-bottom: 5px; /* Väli listakohteiden väliin */
+    font-size: 1em; /* Pienempi fonttikoko */
+    color: #070707; /* Tummanharmaa väri */
+}
+
+.drink-list {
+    list-style-type: none; /* Poista oletuslistan tyylit */
+    padding: 0; /* Poista täyttö */
+    margin: 0; /* Poista marginaali */
+}
+
+.drink-list li {
+    margin-bottom: 5px; /* Väli listakohteiden väliin */
+    font-size: 1em; /* Pienempi fonttikoko */
+    color: #0c0c0c; /* Tekstin väri */
+}
+
+.footer {
+    background-color: #cc0000; /* Red background */
+    color: #ffffff; /* White text */
+    text-align: center;
+    padding: 10px 0;
+    position: fixed; /* Kiinteä sijainti sivun alareunassa */
+    width: 100%; /* Leveys koko sivun leveydelle */
+    bottom: 0; /* Alareuna */
+}
+
+.footer p {
+    margin: 0; /* Poista marginaali */
+    font-size: 0.9em; /* Pienempi fonttikoko */
+    color: #ffffff; /* Valkoinen väri */
+}
+
+#about {
+    background-color: #f9f9f9; /* Light background color for contrast */
+    padding: 30px 20px; /* Pienempi padding */
+    text-align: center; /* Center-align text */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.205); /* Subtle shadow */
+}
+
+#about h2 {
+    font-size: 1.8em; /* Pienempi fonttikoko */
+    color: #cc0000; /* Punainen väri */
+    margin-bottom: 10px; /* Väli otsikon ja tekstin väliin */
+}
+
+#about p {
+    font-size: 1em; /* Pienempi fonttikoko */
+    line-height: 1.5; /* Suurempi riviväli parempaan luettavuuteen */
+    color: #333333; /* Tummanharmaa väri */
+    margin: 0 auto; /* Keskitä kappale */
+    max-width: 700px; /* Maksimikorkeus paremman tekstin kohdistuksen vuoksi */
+}
+
+#contact p {
+    margin: 10px 0; /* Lisää väliä yhteystietojen väliin */
+    font-size: 1em; /* Fonttikoko */
+    color: #333333; /* Tummanharmaa väri */
+}
+
+#contact a {
+    color: #cc0000; /* Punainen teksti linkeille */
+    text-decoration: none; /* Poista linkin alaviiva */
+}
+
+#contact a:hover {
+    text-decoration: underline; /* Lisää alaviiva hover-tilassa */
+}
