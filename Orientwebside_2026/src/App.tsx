@@ -17,6 +17,7 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminMenuPage from "./pages/admin/AdminMenuPage";
 import AdminOffersPage from "./pages/admin/AdminOffersPage";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { WelcomeDialog } from "./components/WelcomeDialog";
 
 const App = () => (
   <ThemeProvider attribute="class" defaultTheme="light">
@@ -32,6 +33,7 @@ const App = () => (
               }}
             >
               <ScrollToTop />
+              <WelcomeDialog />
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/tietoa" element={<About />} />

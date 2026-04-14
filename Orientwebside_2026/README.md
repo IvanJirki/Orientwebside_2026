@@ -38,9 +38,50 @@ Oletusosoite kehityksessä: `http://localhost:5173/` (katso `vite.config.ts`).
 
 Kopioi `.env.example` → `.env` ja aseta `VITE_ADMIN_PASSWORD`. Käynnistä dev-palvelin uudelleen salasanan jälkeen.
 
-## Julkaisu
+## Julkaisu (itse hostattu)
 
-`npm run build` tuottaa staattisen sisällön kansioon **`dist/`**. Voit hostata sen millä tahansa staattisella palvelulla (esim. Netlify, Cloudflare Pages, Azure Static Web Apps): juurihakemistoksi `dist`, kaikki polut SPA:lle samaan `index.html` -tiedostoon.
+Tuotantokäännös vaatii **`VITE_ADMIN_PASSWORD`** build-aikana (kopioi `.env.example` → `.env` tai aseta muuttuja CI:ssä / Docker-buildissä).
+
+### Vaihtoehto A: Docker + Nginx (suositeltu)
+
+Kansiossa `Orientwebside_2026/`:
+
+1. Luo `.env` ja aseta `VITE_ADMIN_PASSWORD` (sama kuin kehityksessä).
+2. Käynnistä:
+
+```bash
+docker compose up -d --build
+```
+
+Sivusto: `http://localhost:8080/` (portti vaihdettavissa: `HOST_PORT=80` env-muuttujalla).
+
+Ilman Composea:
+
+```bash
+docker build --build-arg VITE_ADMIN_PASSWORD="oma-salasana" -t orient-kebab-web .
+docker run -p 8080:80 orient-kebab-web
+```
+
+### Vaihtoehto B: Pelkkä `dist/` + Nginx palvelimella
+
+1. Tuotantopaketti:
+
+```bash
+npm run build
+```
+
+tai Windowsissa `.env` luettuna: `powershell -File scripts/build-production.ps1`  
+Linux/macOS: `chmod +x scripts/build-production.sh && ./scripts/build-production.sh`
+
+2. Kopioi **`dist/`** sisältö palvelimelle (esim. `/var/www/orient-kebab/`).
+3. Käytä Nginx-esimerkkiä tiedostosta **`deploy/nginx-site.conf`**: päivitä `server_name` ja `root`, ota käyttöön sivusto (`sites-enabled`), aja `nginx -t` ja `systemctl reload nginx`.
+4. Ota **HTTPS** käyttöön (esim. Let’s Encrypt / certbot) tuotantoon.
+
+React Router -polut vaativat **`try_files ... /index.html`** (esimerkissä valmiina).
+
+### Pilvipalvelut (vapaaehtoinen)
+
+`dist/` voidaan myös nostaa Netlifyyn, Cloudflare Pagesiin tms.: julkaisuhakemisto `dist`, SPA-redirect kaikki polut → `index.html`.
 
 ## Teknologiat
 

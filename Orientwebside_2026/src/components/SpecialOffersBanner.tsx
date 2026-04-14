@@ -1,7 +1,8 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
 import { activeSpecialOffers } from "@/lib/siteConfigStorage";
-import type { SiteLang } from "@/types/siteConfig";
+import { resolveLocalized, type SiteLang } from "@/types/siteConfig";
+import { useTranslation } from "react-i18next";
 import { Card } from "@/components/ui/card";
 import { Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -13,6 +14,7 @@ interface SpecialOffersBannerProps {
 
 export function SpecialOffersBanner({ variant = "default" }: SpecialOffersBannerProps) {
   const { language } = useLanguage();
+  const { t } = useTranslation();
   const { config } = useSiteConfig();
   const lang = language as SiteLang;
   const offers = activeSpecialOffers(config.specialOffers);
@@ -36,7 +38,7 @@ export function SpecialOffersBanner({ variant = "default" }: SpecialOffersBanner
             onImage ? "text-white/90" : "text-muted-foreground",
           )}
         >
-          {lang === "fi" ? "Tarjoukset" : lang === "sv" ? "Erbjudanden" : "Special offers"}
+          {t("specialOffersTitle")}
         </span>
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
@@ -46,11 +48,13 @@ export function SpecialOffersBanner({ variant = "default" }: SpecialOffersBanner
             className="border-orient-red/30 bg-card/95 p-4 text-left shadow-lg backdrop-blur-sm dark:bg-card/90"
           >
             <p className="text-xs font-semibold uppercase text-orient-red">{offer.priceLabel}</p>
-            <h3 className="mt-1 font-sans text-lg font-bold tracking-tight text-foreground">{offer.title[lang]}</h3>
-            <p className="mt-2 text-sm text-muted-foreground">{offer.description[lang]}</p>
+            <h3 className="mt-1 font-sans text-lg font-bold tracking-tight text-foreground">
+              {resolveLocalized(offer.title, lang)}
+            </h3>
+            <p className="mt-2 text-sm text-muted-foreground">{resolveLocalized(offer.description, lang)}</p>
             {offer.validUntil && (
               <p className="mt-3 text-xs text-muted-foreground">
-                {lang === "fi" ? "Voimassa" : lang === "sv" ? "Gäller till" : "Valid until"} {offer.validUntil}
+                {t("offerValidUntil")} {offer.validUntil}
               </p>
             )}
           </Card>

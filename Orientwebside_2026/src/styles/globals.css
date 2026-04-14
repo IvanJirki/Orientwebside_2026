@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  html[dir="rtl"] body {
+    font-family: "Noto Sans Arabic", "Inter", system-ui, sans-serif;
+  }
+
   :root {
     --background: 0 0 100;
     --foreground: 0 0 10;

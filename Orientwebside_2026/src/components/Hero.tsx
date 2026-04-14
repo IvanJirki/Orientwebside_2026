@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { Phone, MapPin, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
-import type { SiteLang } from "@/types/siteConfig";
+import { resolveLocalized, type SiteLang } from "@/types/siteConfig";
 import orientLogo from "@/assets/images/orient-logo-hero.png";
 import { HeroBackground } from "@/components/HeroBackground";
 
@@ -17,14 +17,12 @@ export const Hero = () => {
   const { config } = useSiteConfig();
   const lang = language as SiteLang;
 
+  const customTitle = resolveLocalized(config.homeHero.title, lang);
+  const customSubtitle = resolveLocalized(config.homeHero.subtitle, lang);
   const heroTitle =
-    config.useCustomHome && config.homeHero.title[lang].trim()
-      ? config.homeHero.title[lang]
-      : t("heroTitle");
+    config.useCustomHome && customTitle.trim() ? customTitle : t("heroTitle");
   const heroSubtitle =
-    config.useCustomHome && config.homeHero.subtitle[lang].trim()
-      ? config.homeHero.subtitle[lang]
-      : t("heroSubtitle");
+    config.useCustomHome && customSubtitle.trim() ? customSubtitle : t("heroSubtitle");
 
   return (
     <section className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden py-10 sm:py-12">

@@ -1,6 +1,13 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
+import en from "./locales/en.json";
+import de from "./locales/de.json";
+import ar from "./locales/ar.json";
+import fr from "./locales/fr.json";
+import ku from "./locales/ku.json";
+import ckb from "./locales/ckb.json";
+import bah from "./locales/bah.json";
 
 const resources = {
   fi: {
@@ -136,24 +143,24 @@ const resources = {
       pizza20: 'AL CAPONE - Pekoni, Salami, Kanamuna',
       
       // Kebab & Chicken Pizzas (21-33)
-      pizza21: 'CALZONE (sisäänleivottu) - Kinkku, Herkkusieni, Aurajuusto',
-      pizza22: 'TALON ERIKOINEN - Kebabliha, Katkarapu, Sipuli, Jalapeño',
+      pizza21: 'CALZONE (folded) - Kinkku, Herkkusieni, Aurajuusto',
+      pizza22: 'HOUSE SPECIAL - Kebabliha, Katkarapu, Sipuli, Jalapeño',
       pizza23: 'ORIENTALE - Kebabliha, Tomaattisiivuja, Sipuli, Chili, Aurajuusto',
       pizza24: 'TORINO - Kebabliha, Paprika, Herkkusieni, Orientkastike',
       pizza25: 'ORIENT SPECIAL - Kebabliha, Sipuli, Orientkastike',
       pizza26: 'KEBAB SPECIAL - Kebabliha, Sipuli, Herkkusieni, Jalapeño, Orientkastike',
       pizza27: 'PIRA DELAL - Kebabliha, Paprika, Sipuli, Herkkusieni',
-      pizza28: 'KANA SPECIAL - Kanaliha, Tomaattisiivuja, Sipuli, Chili, Aurajuusto',
-      pizza29: 'KANA MEXICANO - Kanaliha, Ananas, Jalapeño, Mexicankastike',
+      pizza28: 'CHICKEN SPECIAL - Kanaliha, Tomaattisiivuja, Sipuli, Chili, Aurajuusto',
+      pizza29: 'CHICKEN MEXICANO - Kanaliha, Ananas, Jalapeño, Mexicankastike',
       pizza30: 'CHICKEN PIZZA - Kanaliha, Ananas, Aurajuusto',
-      pizza31: 'KASVIS KANA - Kanaliha, Herkkusieni, Paprika, Sipuli, Chili',
-      pizza32: 'AKIN ERIKOINEN - Kebabliha, Kinkku, Ananas, Orientkastike',
-      pizza33: 'PETEN ERIKOINEN - Kebabliha, Kinkku, Pekoni, Orientkastike',
+      pizza31: 'VEGGIE CHICKEN - Kanaliha, Herkkusieni, Paprika, Sipuli, Chili',
+      pizza32: 'AKI SPECIAL - Kebabliha, Kinkku, Ananas, Orientkastike',
+      pizza33: 'PETE SPECIAL - Kebabliha, Kinkku, Pekoni, Orientkastike',
       
       // Special Pizzas (34-41)
-      pizza34: 'SAVUPORO PIZZA - Savuporo, Ananas, Aurajuusto',
-      pizza35: 'HAMINAN PORO - Savuporo, Ananas, Pekoni, Sipuli',
-      pizza36: 'HOT SAVUPORO - Savuporo, Pepperonimakkara, Ananas, Jalapeño, Mexicankastike',
+      pizza34: 'SMOKED REINDEER PIZZA - Savuporo, Ananas, Aurajuusto',
+      pizza35: 'HAMINA REINDEER - Savuporo, Ananas, Pekoni, Sipuli',
+      pizza36: 'HOT SMOKED REINDEER - Savuporo, Pepperonimakkara, Ananas, Jalapeño, Mexicankastike',
       pizza37: 'SUCUK PIZZA - Sucuk (Turkkilainen makkara), Kebabliha, Jalapeño, Hot Orientkastike',
       pizza38: 'HOT SUCUK - Sucuk (Turkkilainen makkara), Kana, Ananas, Jalapeño, Hot Orientkastike',
       pizza39: 'DALAL SUCUK - Sucuk (Turkkilainen makkara), Chili, Tomaattisiivuja, Sipuli, Aurajuusto',
@@ -163,15 +170,15 @@ const resources = {
       // Giant Pizzas
       giantPizza1: 'VESUVIO - Kinkku',
       giantPizza2: 'BUCCOLA - Kinkku, Katkarapu',
-      giantPizza3: 'STAR PERHE - Kinkku, Salami',
+      giantPizza3: 'STAR FAMILY - Kinkku, Salami',
       giantPizza4: 'HAWAII - Kinkku, Ananas',
       giantPizza5: 'OPERA - Kinkku, Tonnikala',
       giantPizza6: 'OPERA SPECIAL - Kinkku, Tonnikala, Salami',
       giantPizza7: 'QUATTRO STAGIONI - Kinkku, Herkkusieni, Katkarapu',
       giantPizza8: 'SISILIA - Kinkku, Ananas, Aurajuusto',
       giantPizza9: 'KEBAB PIZZA - Kebabliha, Sipuli, Jalapeño, Orientkastike',
-      giantPizza10: 'SAVUPORO PIZZA - Savuporo, Ananas, Aurajuusto',
-      giantPizza11: 'HAMINANPORO - Savuporo, Ananas, Pekoni, Sipuli',
+      giantPizza10: 'SMOKED REINDEER PIZZA - Savuporo, Ananas, Aurajuusto',
+      giantPizza11: 'HAMINA REINDEER - Savuporo, Ananas, Pekoni, Sipuli',
       
       // Kids Menu
       kidsMenuTitle: 'Lasten menu',
@@ -237,6 +244,14 @@ const resources = {
       water033: 'Lähdevesi 0,33L',
       water05: 'Lähdevesi 0,5L',
       
+      specialOffersTitle: 'Tarjoukset',
+      offerValidUntil: 'Voimassa asti',
+      welcomeTitle: 'Tervetuloa Orient Kebabin sivulle',
+      welcomeSubtitle:
+        'Valitse kieli ja tutustu ruokalistaan, aukioloaikoihin ja tarjouksiin.',
+      welcomeChooseLabel: 'Valitse kieli',
+      welcomeContinue: 'Jatka tällä kielellä',
+
       // Footer
       footerTagline: 'Aitoja kebabeja ja uunituoreita pizzoja valmistettu rakkaudella ja perinteisesti',
       footerCompanyLegal: '© 2026 Jirki Oy · Y-tunnus: 3156993-7',
@@ -475,6 +490,14 @@ const resources = {
       water033: 'Water 0.33L',
       water05: 'Water 0.5L',
       
+      specialOffersTitle: 'Special offers',
+      offerValidUntil: 'Valid until',
+      welcomeTitle: 'Welcome to Orient Kebab',
+      welcomeSubtitle:
+        'Choose your language to explore our menu, opening hours and special offers.',
+      welcomeChooseLabel: 'Choose language',
+      welcomeContinue: 'Continue with current language',
+
       // Footer
       footerTagline: 'Authentic kebabs and fresh pizzas made with love and tradition',
       footerCompanyLegal: '© 2026 Jirki Oy · Business ID 3156993-7',
@@ -612,24 +635,24 @@ const resources = {
       pizza20: 'AL CAPONE - Bacon, Salami, Ägg',
       
       // Kebab & Chicken Pizzas (21-33)
-      pizza21: 'CALZONE (invikt) - Skinka, Champinjon, Ädelost',
-      pizza22: 'HUSETS SPECIAL - Kebabkött, Räka, Lök, Jalapeño',
+      pizza21: 'CALZONE (folded) - Skinka, Champinjon, Ädelost',
+      pizza22: 'HOUSE SPECIAL - Kebabkött, Räka, Lök, Jalapeño',
       pizza23: 'ORIENTALE - Kebabkött, Tomatskivor, Lök, Chili, Ädelost',
       pizza24: 'TORINO - Kebabkött, Paprika, Champinjon, Orientsås',
       pizza25: 'ORIENT SPECIAL - Kebabkött, Lök, Orientsås',
       pizza26: 'KEBAB SPECIAL - Kebabkött, Lök, Champinjon, Jalapeño, Orientsås',
       pizza27: 'PIRA DELAL - Kebabkött, Paprika, Lök, Champinjon',
-      pizza28: 'KYCKLING SPECIAL - Kyckling, Tomatskivor, Lök, Chili, Ädelost',
-      pizza29: 'KYCKLING MEXICANO - Kyckling, Ananas, Jalapeño, Mexikansk sås',
+      pizza28: 'CHICKEN SPECIAL - Kyckling, Tomatskivor, Lök, Chili, Ädelost',
+      pizza29: 'CHICKEN MEXICANO - Kyckling, Ananas, Jalapeño, Mexikansk sås',
       pizza30: 'CHICKEN PIZZA - Kyckling, Ananas, Ädelost',
-      pizza31: 'GRÖNSAK KYCKLING - Kyckling, Champinjon, Paprika, Lök, Chili',
+      pizza31: 'VEGGIE CHICKEN - Kyckling, Champinjon, Paprika, Lök, Chili',
       pizza32: 'AKI SPECIAL - Kebabkött, Skinka, Ananas, Orientsås',
       pizza33: 'PETE SPECIAL - Kebabkött, Skinka, Bacon, Orientsås',
       
       // Special Pizzas (34-41)
-      pizza34: 'RÖKREN PIZZA - Rökren, Ananas, Ädelost',
-      pizza35: 'HAMINA REN - Rökren, Ananas, Bacon, Lök',
-      pizza36: 'HOT RÖKREN - Rökren, Pepperoni, Ananas, Jalapeño, Mexikansk sås',
+      pizza34: 'SMOKED REINDEER PIZZA - Rökren, Ananas, Ädelost',
+      pizza35: 'HAMINA REINDEER - Rökren, Ananas, Bacon, Lök',
+      pizza36: 'HOT SMOKED REINDEER - Rökren, Pepperoni, Ananas, Jalapeño, Mexikansk sås',
       pizza37: 'SUCUK PIZZA - Sucuk (Turkisk korv), Kebabkött, Jalapeño, Hot Orientsås',
       pizza38: 'HOT SUCUK - Sucuk (Turkisk korv), Kyckling, Ananas, Jalapeño, Hot Orientsås',
       pizza39: 'DALAL SUCUK - Sucuk (Turkisk korv), Chili, Tomatskivor, Lök, Ädelost',
@@ -639,15 +662,15 @@ const resources = {
       // Giant Pizzas
       giantPizza1: 'VESUVIO - Skinka',
       giantPizza2: 'BUCCOLA - Skinka, Räka',
-      giantPizza3: 'STAR FAMILJ - Skinka, Salami',
+      giantPizza3: 'STAR FAMILY - Skinka, Salami',
       giantPizza4: 'HAWAII - Skinka, Ananas',
       giantPizza5: 'OPERA - Skinka, Tonfisk',
       giantPizza6: 'OPERA SPECIAL - Skinka, Tonfisk, Salami',
       giantPizza7: 'QUATTRO STAGIONI - Skinka, Champinjon, Räka',
       giantPizza8: 'SISILIA - Skinka, Ananas, Ädelost',
       giantPizza9: 'KEBAB PIZZA - Kebabkött, Lök, Jalapeño, Orientsås',
-      giantPizza10: 'RÖKREN PIZZA - Rökren, Ananas, Ädelost',
-      giantPizza11: 'HAMINA REN - Rökren, Ananas, Bacon, Lök',
+      giantPizza10: 'SMOKED REINDEER PIZZA - Rökren, Ananas, Ädelost',
+      giantPizza11: 'HAMINA REINDEER - Rökren, Ananas, Bacon, Lök',
       
       // Kids Menu
       kidsMenuTitle: 'Barnmeny',
@@ -713,11 +736,37 @@ const resources = {
       water033: 'Vatten 0,33L',
       water05: 'Vatten 0,5L',
       
+      specialOffersTitle: 'Erbjudanden',
+      offerValidUntil: 'Gäller till',
+      welcomeTitle: 'Välkommen till Orient Kebab',
+      welcomeSubtitle:
+        'Välj språk för att se menyn, öppettider och erbjudanden.',
+      welcomeChooseLabel: 'Välj språk',
+      welcomeContinue: 'Fortsätt med detta språk',
+
       // Footer
       footerTagline: 'Äkta kebaber och färska pizzor gjorda med kärlek och tradition',
       footerCompanyLegal: '© 2026 Jirki Oy · FO-nummer 3156993-7',
       allRightsReserved: 'Alla rättigheter förbehållna',
     },
+  },
+  de: {
+    translation: de,
+  },
+  ar: {
+    translation: ar,
+  },
+  fr: {
+    translation: fr,
+  },
+  ku: {
+    translation: ku,
+  },
+  ckb: {
+    translation: ckb,
+  },
+  bah: {
+    translation: bah,
   },
 };
 
@@ -727,6 +776,8 @@ i18n
   .init({
     resources,
     fallbackLng: "fi",
+    supportedLngs: ["fi", "en", "sv", "de", "ar", "fr", "ku", "ckb", "bah"],
+    nonExplicitSupportedLngs: true,
     interpolation: {
       escapeValue: false,
     },

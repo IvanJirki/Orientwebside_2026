@@ -1,5 +1,5 @@
 import type { MenuSectionData } from "@/components/MenuSelector";
-import type { SiteConfig, SiteLang, SpecialOffer, StoredMenuCategory } from "@/types/siteConfig";
+import { resolveLocalized, type SiteConfig, type SiteLang, type SpecialOffer, type StoredMenuCategory } from "@/types/siteConfig";
 import i18n from "@/i18n";
 import { buildMenuSections } from "@/lib/buildMenuSections";
 import pizzaImage from "@/assets/images/pizza-menu.jpg";
@@ -77,14 +77,14 @@ export function buildStoredMenuFromI18n(): SiteConfig {
 export function storedToMenuSections(config: SiteConfig, lang: SiteLang): MenuSectionData[] {
   return config.categories.map((cat) => ({
     id: cat.id,
-    title: cat.title[lang],
-    description: cat.description[lang],
+    title: resolveLocalized(cat.title, lang),
+    description: resolveLocalized(cat.description, lang),
     image: IMAGE_BY_ID[cat.imageId],
     sizeCategories: cat.sizeCategories.map((sc) => ({
-      size: sc.size[lang],
+      size: resolveLocalized(sc.size, lang),
       subcategories: sc.subcategories.map((sub) => ({
-        title: sub.title[lang],
-        items: sub.items.map((line) => line[lang]),
+        title: resolveLocalized(sub.title, lang),
+        items: sub.items.map((line) => resolveLocalized(line, lang)),
       })),
     })),
   }));

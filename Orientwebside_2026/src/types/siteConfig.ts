@@ -1,4 +1,12 @@
-export type SiteLang = "fi" | "en" | "sv";
+export type SiteLang = "fi" | "en" | "sv" | "ar" | "de" | "fr" | "ku" | "ckb" | "bah";
+
+/** Hallinnan tallentamat käännökset (fi/en/sv); muut kielet käyttävät englantia jos puuttuu. */
+export function resolveLocalized(ls: LocalizedString, lang: SiteLang): string {
+  if (lang === "ar" || lang === "de" || lang === "fr" || lang === "ku" || lang === "ckb" || lang === "bah") {
+    return ls.en?.trim() || ls.fi;
+  }
+  return ls[lang];
+}
 
 export interface LocalizedString {
   fi: string;

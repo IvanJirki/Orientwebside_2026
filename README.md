@@ -12,6 +12,8 @@ Avaa **http://localhost:5173/** (tai anna selaimen avautua itsestään). Jos por
 
 **Rakenne:** `src/styles/` (`globals.css`), `src/components/`, `src/assets/images/`.
 
+**Itse hostattu julkaisu:** Docker + Nginx tai pelkkä `dist/` + Nginx — katso **[`Orientwebside_2026/README.md`](Orientwebside_2026/README.md)** (osio *Julkaisu*).
+
 ### Kaksi `orient-web`-kansiota?
 
 Ainoa oikea projekti on **`Orientwebside_2026/`** (siellä `package.json`, `src/`, `node_modules`).  
