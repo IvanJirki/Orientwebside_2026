@@ -121,3 +121,8 @@
     padding-right: env(safe-area-inset-right);
   }
 }
+
+/* Leaflet: Tailwind preflight sets img { max-width: 100% } and breaks OSM tile layers */
+.leaflet-container img {
+  max-width: none !important;
+}

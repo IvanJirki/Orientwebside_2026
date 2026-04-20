@@ -17,7 +17,7 @@ import flagKurdistan from '@/assets/images/flag-kurdistan.png';
 import flagSaudiArabia from '@/assets/images/flag-saudi-arabia.png';
 
 export const LanguageSwitcher = () => {
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
 
   const languages: {
     code: Language;
@@ -39,9 +39,13 @@ export const LanguageSwitcher = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:bg-muted/50">
-          <Languages className="h-[1.2rem] w-[1.2rem]" />
-          <span className="sr-only">Change language</span>
+        <Button
+          variant="ghost"
+          size="icon"
+          className="text-muted-foreground hover:bg-muted/80 hover:text-foreground dark:hover:bg-white/10"
+          aria-label={t("welcomeChooseLabel", { defaultValue: "Choose language" })}
+        >
+          <Languages className="h-[1.15rem] w-[1.15rem]" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="bg-background z-50">

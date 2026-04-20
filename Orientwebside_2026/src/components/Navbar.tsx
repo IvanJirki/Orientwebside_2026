@@ -6,6 +6,7 @@ import { Home, Info, UtensilsCrossed, Phone, Menu } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { cn } from "@/lib/utils";
 import orientLogo from "@/assets/images/orient-logo-main.png";
 
 export const Navbar = () => {
@@ -21,49 +22,64 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-gray-300/20 bg-white/95 shadow-[0_2px_8px_rgba(255,255,255,0.1)] backdrop-blur-sm dark:border-white/10 dark:bg-orient-dark/95">
+    <nav className="sticky top-0 z-50 border-b border-border/50 bg-background/85 shadow-[0_1px_0_0_hsl(var(--border)/0.4)] backdrop-blur-md supports-[backdrop-filter]:bg-background/75 dark:border-white/10 dark:bg-orient-dark/90 dark:shadow-[0_1px_0_0_rgba(255,255,255,0.06)]">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex min-h-[3.5rem] items-center justify-between gap-3 py-2 sm:min-h-[4rem] sm:py-3">
-          <Link to="/" className="flex min-w-0 flex-shrink-0 items-center py-1" onClick={() => setMobileOpen(false)}>
+        <div className="flex h-16 items-center justify-between gap-4 sm:h-[4.5rem]">
+          <Link
+            to="/"
+            className="flex min-w-0 flex-shrink-0 items-center py-1 transition-opacity hover:opacity-90"
+            onClick={() => setMobileOpen(false)}
+          >
             <img
               src={orientLogo}
               alt="Orient Kebab Pizzeria"
-              className="h-9 w-auto max-w-[min(100%,200px)] object-contain drop-shadow-lg sm:h-12 md:h-14"
+              className="h-10 w-auto max-w-[min(100%,220px)] object-contain sm:h-12 md:h-14"
             />
           </Link>
 
           {/* Desktop */}
-          <div className="hidden items-center gap-1.5 md:flex md:gap-2">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              const isActive = location.pathname === item.path;
-              return (
-                <Link key={item.path} to={item.path}>
-                  <Button
-                    variant={isActive ? "hero" : "outline"}
-                    size="sm"
-                    className={`touch-manipulation text-xs sm:text-sm ${isActive ? "border-0 shadow-md" : "bg-background/80 shadow-sm backdrop-blur-sm dark:bg-muted/35"}`}
+          <div className="hidden items-center gap-6 md:flex">
+            <nav className="flex items-center gap-0.5 lg:gap-1" aria-label={t("mobileNavTitle")}>
+              {navItems.map((item) => {
+                const isActive = location.pathname === item.path;
+                return (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={cn(
+                      "relative touch-manipulation rounded-md px-3.5 py-2.5 text-sm font-medium tracking-tight transition-colors sm:text-base lg:px-4",
+                      isActive
+                        ? "text-foreground"
+                        : "text-muted-foreground hover:bg-muted/60 hover:text-foreground dark:hover:bg-white/5",
+                    )}
                   >
-                    <Icon className="h-3 w-3 sm:mr-2 sm:h-4 sm:w-4" />
-                    <span>{item.label}</span>
-                  </Button>
-                </Link>
-              );
-            })}
-            <LanguageSwitcher />
-            <ThemeToggle />
+                    {item.label}
+                    {isActive ? (
+                      <span
+                        className="absolute bottom-1.5 left-1/2 h-[3px] w-[1.5rem] -translate-x-1/2 rounded-full bg-primary"
+                        aria-hidden
+                      />
+                    ) : null}
+                  </Link>
+                );
+              })}
+            </nav>
+            <div className="flex items-center gap-1 border-l border-border/60 pl-6 dark:border-white/10">
+              <LanguageSwitcher />
+              <ThemeToggle />
+            </div>
           </div>
 
           {/* Mobile */}
-          <div className="flex items-center gap-1.5 md:hidden">
+          <div className="flex items-center gap-1 md:hidden">
             <LanguageSwitcher />
             <ThemeToggle />
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
               <SheetTrigger asChild>
                 <Button
-                  variant="outline"
+                  variant="ghost"
                   size="icon"
-                  className="touch-manipulation shrink-0"
+                  className="touch-manipulation shrink-0 text-muted-foreground hover:bg-muted/80 hover:text-foreground dark:hover:bg-white/10"
                   aria-expanded={mobileOpen}
                   aria-controls="mobile-navigation"
                   aria-label={t("mobileNavTitle")}

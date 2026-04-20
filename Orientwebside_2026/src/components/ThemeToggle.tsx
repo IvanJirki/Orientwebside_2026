@@ -7,10 +7,10 @@ export const ThemeToggle = () => {
 
   return (
     <Button
-      variant="outline"
-      size="sm"
+      variant="ghost"
+      size="icon"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="relative bg-background/85 backdrop-blur-sm dark:bg-muted/50"
+      className="relative text-muted-foreground hover:bg-muted/80 hover:text-foreground dark:hover:bg-white/10"
       aria-label="Toggle theme"
     >
       <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

@@ -35,6 +35,9 @@ const resources = {
       aboutParagraph2: 'Meille Orientissa ruoka on enemmän kuin pelkkä ateria – se on osa yhteisöllisyyttä ja hyvää oloa. Valmistamme ruoan aina tuoreista raaka-aineista ja rakkaudella, yhdistäen perinteet ja omat reseptimme. Listaltamme löydät monipuolisen valikoiman herkullisia pitsoja, kebab-, kana- ja falafel-annoksia, joista jokainen löytää varmasti oman suosikkinsa.',
       aboutParagraph3: 'Orient on lämminhenkinen kohtaamispaikka, jossa hyvä ruoka ja ystävällinen palvelu tekevät jokaisesta käynnistä mukavan kokemuksen. Tervetuloa nauttimaan ja viihtymään – meillä olet aina tervetullut kuin ystävä.',
       viewInstagram: 'Katso Instagram-profiili',
+      aboutMapTitle: 'Sijainti',
+      aboutMapAddress: 'Laurintie 2, Ii, 91100',
+      aboutMapOpenInGoogleMaps: 'Avaa Google Mapsissa',
       
       // Contact Page
       contactTitle: 'Ota yhteyttä',
@@ -283,6 +286,9 @@ const resources = {
       aboutParagraph2: 'For us at Orient, food is more than just a meal – it is part of community and well-being. We always prepare our food from fresh ingredients and with love, combining traditions and our own recipes. On our menu you will find a wide selection of delicious pizzas, kebab, chicken and falafel dishes, from which everyone will surely find their favorite.',
       aboutParagraph3: 'Orient is a warm meeting place where good food and friendly service make every visit a pleasant experience. Welcome to enjoy and relax – you are always welcome like a friend.',
       viewInstagram: 'View Instagram profile',
+      aboutMapTitle: 'Location',
+      aboutMapAddress: 'Laurintie 2, Ii, 91100',
+      aboutMapOpenInGoogleMaps: 'Open in Google Maps',
       
       // Contact Page
       contactTitle: 'Get in touch',
@@ -529,6 +535,9 @@ const resources = {
       aboutParagraph2: 'För oss på Orient är mat mer än bara en måltid – det är en del av gemenskap och välbefinnande. Vi förbereder alltid vår mat från färska ingredienser och med kärlek, kombinerar traditioner och våra egna recept. På vår meny hittar du ett brett urval av läckra pizzor, kebab-, kyckling- och falafelrätter, från vilka alla säkert hittar sin favorit.',
       aboutParagraph3: 'Orient är en varm mötesplats där god mat och vänlig service gör varje besök till en trevlig upplevelse. Välkommen att njuta och koppla av – du är alltid välkommen som en vän.',
       viewInstagram: 'Visa Instagram-profil',
+      aboutMapTitle: 'Plats',
+      aboutMapAddress: 'Laurintie 2, Ii, 91100',
+      aboutMapOpenInGoogleMaps: 'Öppna i Google Maps',
       
       // Contact Page
       contactTitle: 'Kontakta oss',

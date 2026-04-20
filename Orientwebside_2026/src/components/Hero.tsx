@@ -4,7 +4,6 @@ import { Phone, MapPin, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSiteConfig } from "@/contexts/SiteConfigContext";
 import { resolveLocalized, type SiteLang } from "@/types/siteConfig";
-import orientLogo from "@/assets/images/orient-logo-hero.png";
 import { HeroBackground } from "@/components/HeroBackground";
 
 const heroNavOutlineClass =
@@ -25,20 +24,11 @@ export const Hero = () => {
     config.useCustomHome && customSubtitle.trim() ? customSubtitle : t("heroSubtitle");
 
   return (
-    <section className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden py-10 sm:py-12">
+    <section className="relative flex min-h-[72dvh] items-center justify-center overflow-hidden py-6 sm:min-h-[78dvh] sm:py-8">
       <HeroBackground />
       
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6">
-        {/* Logo */}
-        <div className="mb-6 sm:mb-8 flex justify-center">
-          <img 
-            src={orientLogo} 
-            alt="Orient Kebab Pizzeria - Since 2002" 
-            className="mx-auto w-[min(100%,16rem)] max-w-xs drop-shadow-2xl sm:w-80 md:w-96 lg:w-[28rem]"
-          />
-        </div>
-        
         <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 leading-tight px-2" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.2)' }}>
           {heroTitle}
         </h1>
